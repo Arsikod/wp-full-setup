@@ -1,0 +1,11 @@
+@import "./fonts.css";
+
+body {
+  background: #bada55;
+  background-image: url("./assets/comp.svg");
+  font-family: "Itim";
+}
+
+button {
+  color: "red";
+}
