@@ -1,5 +1,5 @@
 const { merge } = require("webpack-merge");
-const commonConfig = require("./webpack.common.js");
+const commonConfig = require("./webpack.common.ts");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const glob = require("glob");
@@ -16,6 +16,11 @@ const prodConfig = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
       },
     ],
   },

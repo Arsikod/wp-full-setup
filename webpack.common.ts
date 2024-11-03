@@ -1,8 +1,15 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+import { Configuration } from "webpack";
+
+const config: Configuration = {
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
@@ -22,4 +29,9 @@ module.exports = {
   output: {
     clean: true,
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
 };
+
+export default config;
