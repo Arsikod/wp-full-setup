@@ -11,6 +11,7 @@ const devServer: ServerConfig = {
 
 const devConfig: Configuration = {
   mode: "development",
+  devtool: "eval-source-map",
   devServer: devServer,
 };
 
